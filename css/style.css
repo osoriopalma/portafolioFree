@@ -1,0 +1,188 @@
+/*Definiciónn de un pseudoselector*/
+
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --fuente-principal: 2rem;
+}
+
+
+/* Globales */
+
+html {
+    font-size: 20px;
+    /*Hack para Box Model (los valores no se suman)*/
+    box-sizing: border-box;
+}
+
+
+/*Hack para Box Model (los valores no se suman)*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #8b8b8b 0%, var(--blanco) 100%);
+}
+
+.contenedor {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    box-shadow: 6px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 6px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: var(--blanco);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+/* Tipografía */
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+
+/* Títulos */
+
+.titulo span {
+    font-size: 1rem;
+}
+
+
+/* Navegación principal */
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.navegacion-principal a:focus {
+    color: var(--secundario);
+}
+
+@media(min-width:768px) {
+    .navegacion-principal {
+        flex-direction: row;
+    }
+}
+
+
+/* Hero */
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    /*Sintaxis anterior*/
+    background-color: rgba(0, 0, 0, 0.6);
+    /*Nueva sintaxis aun no soportada en varios navegadores*/
+    background-color: rgb(0 0 0 / 70%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/*
+_Selector de elelmento
+_Selector de clase inicia con un punt
+_Selector de id inicia con un #
+_Selector de atributo-> Selecciona elementos basados en un atributo que tengas
+_Combinación de descendentes -> Selecciona los elementos hijos cuyo padre sea una clase (o ID) en especifico.
+_Todos los hijos -> aplica la siguiente regla a todos los parrafos hijos
+
+
+
+Especificidad: Es como el navegador va a mostrar el css de acuerdoa a que tan especifico es el selector que hemos creado. 
+que valores del css vana ser tomados en cuenta por el navegador
+
+
+
+*/
